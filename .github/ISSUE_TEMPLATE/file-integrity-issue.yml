@@ -1,0 +1,101 @@
+name: 🔧 File Integrity Issue
+description: Report a corrupted file, checksum mismatch, or extraction problem
+title: "🔧 <title>"
+labels: ["integrity"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        **Thank you for reporting a file integrity issue!**
+
+        This template is for reporting problems with file corruption, size mismatches, checksum errors, or extraction failures.
+
+  - type: input
+    attributes:
+      label: ALGLIB Version
+      placeholder: For example, 3.14.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Download URL
+      placeholder: The complete URL you downloaded from
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Expected File Size
+      description: What file size is listed in the release notes?
+      placeholder: For example, 2.4 MB or 2537981 bytes
+
+  - type: input
+    attributes:
+      label: Actual File Size
+      description: What file size did you get after downloading?
+      placeholder: For example, 2.3 MB or 2400000 bytes
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Problem Description
+      description: Describe the integrity issue you're experiencing
+      placeholder: |
+        For example:
+        - File extraction fails with "invalid compressed data" error
+        - Downloaded file is smaller than expected
+        - Checksum doesn't match published value
+        - Archive appears corrupted when opening
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Error Output
+      description: If you received an error when extracting or using the file, paste it here
+      placeholder: |
+        For example:
+        ```
+        tar: Error opening archive: Failed to read entry header
+        gzip: stdin: invalid compressed data--format violated
+        tar: Child returned status 1
+        ```
+      render: shell
+
+  - type: dropdown
+    attributes:
+      label: Extraction Tool
+      description: What tool are you using to extract the archive?
+      options:
+        - tar (Linux/macOS)
+        - 7-Zip (Windows)
+        - WinRAR (Windows)
+        - Windows built-in
+        - macOS Archive Utility
+        - CMake (tar command)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Verification Steps
+      description: What steps have you taken to verify the issue?
+      placeholder: |
+        For example:
+        - [ ] Re-downloaded the file multiple times with same result
+        - [ ] Tried different download methods (wget, curl, browser)
+        - [ ] Verified file size matches the issue
+        - [ ] Tried extracting with different tools
+        - [ ] Compared with official ALGLIB download (if accessible)
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Operating System
+      placeholder: For example, Ubuntu 22.04, macOS Sonoma, Windows 11
+    validations:
+      required: true

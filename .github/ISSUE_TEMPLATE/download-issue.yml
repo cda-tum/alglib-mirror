@@ -1,0 +1,111 @@
+name: 🐛 Download Issue
+description: Report a problem with downloading or accessing ALGLIB files
+title: "🐛 <title>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        **Thank you for reporting a download issue!**
+
+        ⚠
+        Verify first that your issue is not [already reported on GitHub](https://github.com/cda-tum/alglib-mirror/search?q=is%3Aissue&type=issues).
+
+  - type: markdown
+    attributes:
+      value: >-
+        **Environment**
+
+  - type: input
+    attributes:
+      label: ALGLIB Version
+      placeholder: For example, 3.14.0 or 4.00.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Download URL
+      placeholder: For example, https://github.com/cda-tum/alglib-mirror/releases/download/v3.14.0/alglib-3.14.0.cpp.gpl.tgz
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Operating System
+      placeholder: For example, Ubuntu 22.04, macOS Sonoma, Windows 11, etc.
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Download Method
+      description: How are you downloading the file?
+      options:
+        - wget
+        - curl
+        - Browser (Chrome, Firefox, Safari, etc.)
+        - CMake FetchContent
+        - GitHub Actions
+        - GitLab CI
+        - Other CI/CD system
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional environment information
+      description: Feel free to add more information about your environment here (e.g., CI system, network configuration, proxy settings).
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: A clear and concise description of the problem you're experiencing.
+      placeholder: |
+        For example:
+        - Download times out after 30 seconds
+        - File is corrupted or has wrong size
+        - 404 error when accessing release
+        - Checksum mismatch
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Error Messages
+      description: Please paste any error messages you received.
+      placeholder: |
+        Paste the complete error output here. For example:
+        ```
+        wget: unable to resolve host address 'github.com'
+        HTTP request sent, awaiting response... 404 Not Found
+        ```
+      render: shell
+
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: For example, "Download should complete successfully in under 10 seconds"
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide detailed steps to reproduce this issue.
+      placeholder: |
+        1. Run command: wget https://github.com/cda-tum/alglib-mirror/releases/download/v3.14.0/alglib-3.14.0.cpp.gpl.tgz
+        2. Wait for 30 seconds
+        3. Connection times out
+        4. File is not downloaded
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I have verified the URL is correct and matches the pattern in the README
+        - label: I have checked that the release exists on the [Releases page](https://github.com/cda-tum/alglib-mirror/releases)
+        - label: I have tried downloading using a different method (e.g., browser instead of wget)
+        - label: I have checked my network connectivity and proxy settings

@@ -1,0 +1,77 @@
+name: 📦 Version Request
+description: Request a new ALGLIB version to be added to the mirror
+title: "📦 Add ALGLIB version <version>"
+labels: ["version-request"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        **Thank you for requesting a new ALGLIB version!**
+
+        ⚠
+        Please check the [Releases page](https://github.com/cda-tum/alglib-mirror/releases) first to verify the version isn't already available.
+
+  - type: input
+    attributes:
+      label: ALGLIB Version
+      description: Which version of ALGLIB would you like to be mirrored?
+      placeholder: For example, 3.14.0 or 4.00.0
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Edition
+      description: Which edition of ALGLIB do you need?
+      options:
+        - C++ GPL (.cpp.gpl.tgz)
+        - C# GPL (.csharp.gpl.tgz)
+        - VB.NET GPL (.vbnet.gpl.tgz)
+        - Delphi Free (.delphi.free.tgz)
+        - Java Free (.java.free.tgz)
+        - Python/CPython (.cpython.tgz)
+        - Other
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Official Download URL
+      description: Provide the official ALGLIB download URL for this version (if known)
+      placeholder: For example, http://www.alglib.net/translator/re/alglib-3.14.0.cpp.gpl.tgz
+
+  - type: textarea
+    attributes:
+      label: Use Case
+      description: Why do you need this specific version? This helps us prioritize requests.
+      placeholder: |
+        For example:
+        - My project depends on this version
+        - Testing compatibility with older/newer versions
+        - This version contains specific features I need
+        - CI builds require this version
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Priority
+      description: How urgent is this request?
+      options:
+        - Low - Nice to have, not urgent
+        - Medium - Needed for ongoing work
+        - High - Blocking my project/CI
+      default: 1
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: Any additional information that might be helpful.
+      placeholder: |
+        For example:
+        - Link to the official release notes
+        - Reason for using this specific version
+        - Number of projects that would benefit

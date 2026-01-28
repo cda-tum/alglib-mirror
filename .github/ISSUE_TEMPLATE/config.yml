@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/cda-tum/alglib-mirror#readme
+    about: View the README for usage instructions and examples
+  - name: 🌐 Official ALGLIB Website
+    url: http://www.alglib.net/
+    about: Visit the official ALGLIB website for documentation and support
+  - name: 💬 General Questions
+    url: https://github.com/cda-tum/fiction/discussions
+    about: For general questions about using ALGLIB in projects, visit the fiction repository discussions
+  - name: 📥 Releases
+    url: https://github.com/cda-tum/alglib-mirror/releases
+    about: Browse all available ALGLIB versions
